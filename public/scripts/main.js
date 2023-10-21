@@ -221,6 +221,7 @@ async function main(){
   window.router = router;
 
   const socketClient = new WebSocket("ws://localhost:800");
+  console.log({socketClient});
 
   const loadedData = JSON.parse(localStorage.getItem("donkey-game"));
   for(const scopeName in loadedData.events){
