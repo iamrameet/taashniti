@@ -1,0 +1,169 @@
+{
+  "events": {
+    "dealingDone": {
+      "json": [
+        {
+          "type": "method",
+          "args": [
+            {
+              "type": "method",
+              "args": [
+                {
+                  "type": "method",
+                  "args": [
+                    "A",
+                    "SPADE"
+                  ],
+                  "name": "cardOf"
+                }
+              ],
+              "name": "currentPlayerOfCard"
+            }
+          ],
+          "name": "startsWith"
+        }
+      ],
+      "function": ""
+    },
+    "cardsPlayed": {
+      "json": [
+        {
+          "type": "if",
+          "condition": {
+            "type": "method",
+            "args": [
+              "player"
+            ],
+            "name": "isFirstToPlay"
+          },
+          "trueBody": [
+            {
+              "type": "method",
+              "args": [
+                {
+                  "type": "method",
+                  "args": [
+                    "playedCards"
+                  ],
+                  "name": "suitsInCards"
+                }
+              ],
+              "name": "allowCardSuit"
+            }
+          ],
+          "falseBody": [
+            {
+              "type": "if",
+              "condition": {
+                "type": "method",
+                "args": [
+                  {
+                    "type": "method",
+                    "args": [
+                      "allPlayedCards"
+                    ],
+                    "name": "firstCard"
+                  },
+                  {
+                    "type": "method",
+                    "args": [
+                      {
+                        "type": "method",
+                        "args": [
+                          "playedCards"
+                        ],
+                        "name": "suitsInCards"
+                      }
+                    ],
+                    "name": "firstSuit"
+                  }
+                ],
+                "name": "hasCardSuit"
+              },
+              "trueBody": [
+                {
+                  "type": "if",
+                  "condition": {
+                    "type": "method",
+                    "args": [
+                      {
+                        "type": "method",
+                        "args": [
+                          "playedPlayers"
+                        ],
+                        "name": "count"
+                      },
+                      {
+                        "type": "method",
+                        "args": [
+                          "playersRemaining"
+                        ],
+                        "name": "count"
+                      }
+                    ],
+                    "name": "equals"
+                  },
+                  "trueBody": [
+                    {
+                      "type": "method",
+                      "args": [],
+                      "name": "allowAllCardSuits"
+                    }
+                  ],
+                  "falseBody": []
+                }
+              ],
+              "falseBody": [
+                {
+                  "type": "method",
+                  "args": [
+                    {
+                      "type": "method",
+                      "args": [
+                        {
+                          "type": "method",
+                          "args": [
+                            "allPlayedCards"
+                          ],
+                          "name": "maxCardRank"
+                        }
+                      ],
+                      "name": "currentPlayerOfCard"
+                    }
+                  ],
+                  "name": "setNextLeader"
+                },
+                {
+                  "type": "method",
+                  "args": [
+                    "nextLeader",
+                    "allPlayedCards",
+                    {
+                      "type": "method",
+                      "args": [
+                        "allPlayedCards"
+                      ],
+                      "name": "count"
+                    }
+                  ],
+                  "name": "drawCards"
+                },
+                {
+                  "type": "method",
+                  "args": [],
+                  "name": "allowAllCardSuits"
+                },
+                {
+                  "type": "method",
+                  "args": [],
+                  "name": "endRound"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "function": ""
+    }
+  }
+}

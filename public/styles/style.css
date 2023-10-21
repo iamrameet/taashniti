@@ -1,0 +1,116 @@
+*{ margin: 0px; padding: 0px; box-sizing: border-box; }
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #fbfbfb;
+}
+
+code{
+  margin: 0px 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #ddd;
+  color: #222;
+  border-radius: 0.2rem;
+}
+
+input::placeholder{
+  color: #888;
+}
+input{
+  margin: 0.25rem 0px;
+  padding: 0.25rem 0.35rem;
+  color: #222;
+  border: 1px solid #aaa;
+  background-color: transparent;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.container.row{ flex-direction: row; }
+
+.container.fill{
+  width: 100%;
+  height: 100%;
+}
+.container.w-fill{ width: 100%; }
+.container.h-fill{ height: 100%; }
+
+.container.center{
+  justify-content: center;
+  align-items: center;
+}
+.container:not(.row).v-center,
+.container.row.h-center{ justify-content: center; }
+.container:not(.row).h-center,
+.container.row.v-center{ align-items: center; }
+
+.container.gap{ gap: 1rem; }
+.container.pad{ padding: 1rem; }
+.container.pad-500{ padding: 0.5rem; }
+.container.pad-250{ padding: 0.25rem; }
+.container.margin{ margin: 1rem; }
+
+.text{
+  color: #222;
+}
+.text.heading{
+  font-weight: bold;
+}
+
+#route1{
+  background-color: darkgoldenrod;
+}
+#route2{
+  background-color: rgb(24, 197, 96);
+}
+
+#events{
+  border: 1px solid #000;
+}
+#events .event{
+  border: 1px solid #ddd;
+}
+
+.inline-construct,
+.block-construct{
+  flex-wrap: wrap;
+  margin: 0px 0.25rem;
+  padding: 1rem;
+  white-space: nowrap;
+  color: #444;
+  border: 1px dashed #ddd;
+  /* border-width: 0px 1px; */
+  /* overflow: auto; */
+}
+.inline-construct:hover,
+.block-construct:hover{
+  border-color: #888;
+  background-color: #fff;
+}
+
+.block-construct details summary{
+  padding: 0.25rem;
+  width: auto;
+  color: #007ACC;
+}
+.block-construct details summary:hover{
+  background-color: #f8f8f8;
+}
+.block-construct details summary::marker{
+  /* font-family: monospace;
+  content: "[+] "; */
+  color: #444;
+}
+/* .block-construct details[open] summary::marker{
+  content: "[-] ";
+} */
