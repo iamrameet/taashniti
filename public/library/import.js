@@ -1,4 +1,4 @@
-export default class Import{
+export default class Import {
 
   /** @typedef {{ html: string, script: string | null, style: string | null }} HTMLImport */
   /** @type {{ [path: string]: HTMLImport }} */
