@@ -19,7 +19,7 @@ const BaseStructure = {
       "info": "Represents a Player entity"
     },
     "Card": {
-      "info": "Represents a Player entity"
+      "info": "Represents a Card entity"
     },
     "CardSuit": {
       "info": "Represents a card suit"
@@ -173,7 +173,7 @@ const BaseStructure = {
           },
           "params": [ "T", "T" ],
           "returns": "T",
-          "representation": [ "items that are present in both ", "$0", " and ", "$1" ]
+          "representation": [ "items present in ", "$0", " and ", "$1" ]
         },
         "union": {
           "info": "The union of two set of collections",
@@ -182,7 +182,7 @@ const BaseStructure = {
           },
           "params": [ "T", "T" ],
           "returns": "T",
-          "representation": [ "items that are either present in ", "$0", " or present in ", "$1" ]
+          "representation": [ "items either present in ", "$0", " or in ", "$1" ]
         },
         "difference": {
           "info": "The difference of two set of collections",
@@ -191,7 +191,7 @@ const BaseStructure = {
           },
           "params": [ "T", "T" ],
           "returns": "T",
-          "representation": [ "items that are present in ", "$0", " but not present in ", "$1" ]
+          "representation": [ "items present in ", "$0", " but not in ", "$1" ]
         },
         "count": {
           "info": "Count the number of items in a collection",

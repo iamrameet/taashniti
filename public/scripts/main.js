@@ -154,6 +154,8 @@ class Builder {
 
 };
 
+globalThis.Builder = Builder;
+
 /**
  * @param {{ info: string; params: (keyof BuilderData["types"])[]; returns: keyof BuilderData["types"]; templates?: { [name: string]: (keyof BuilderData["types"])[] } }} method */
 function createOverloads(method){
@@ -220,10 +222,10 @@ async function main(){
 
   window.router = router;
 
-  const socketClient = new WebSocket("ws://localhost:800");
-  console.log({socketClient});
+  // const socketClient = new WebSocket("ws://localhost:800");
+  // console.log({socketClient});
 
-  const loadedData = JSON.parse(localStorage.getItem("donkey-game"));
+  const loadedData = JSON.parse(localStorage.getItem("donkey-game") ?? "{}");
   for(const scopeName in loadedData.events){
     const { json } = loadedData.events[scopeName];
     const elementBuilder = new ElementBuilder(Builder, scopeName);

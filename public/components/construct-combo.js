@@ -34,7 +34,7 @@ export default class ConstructCombo extends ExtendedComboBox {
           ...Object.entries(scope.methods),
           ...Object.entries(BuilderData.scopes.global.methods),
         ]
-          // .filter(entry => entry[1].returns === "Void")
+          .filter(entry => entry[1].returns === "Void")
           .map(([ name, method ]) => ({ value: name, info: method.info }))
         );
         methodsCombo.classList.add("container", "row");
